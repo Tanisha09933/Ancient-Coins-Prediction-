@@ -1,0 +1,11 @@
+Flask
+Flask-Cors
+requests
+beautifulsoup4
+ddgs
+mysql-connector-python
+Flask-SQLAlchemy
+googlesearch-python
+torch
+torchvision
+Pillow

@@ -1,0 +1,253 @@
+/* --- NEW UI: General Body and Theme --- */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: url('../asset/background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+    text-align: center;
+    position: relative;
+}
+
+/* Whitish faded overlay */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.4);
+    z-index: -1;
+}
+
+header {
+    padding: 20px;
+    text-align: center;
+    background: rgba(0,0,0,0.4);
+    border-bottom: 2px solid gold;
+}
+
+h1 {
+    margin: 0;
+    font-size: 2.8em;
+    color: gold;
+    text-shadow: 2px 2px 5px black;
+}
+
+.container {
+    padding: 40px 20px;
+    max-width: 900px;
+    margin: auto;
+}
+
+h3, h4 {
+    color: #ffeb99;
+    text-shadow: 1px 1px 4px black;
+}
+
+/* --- NEW UI: Inputs, Buttons, and Dropdowns --- */
+.search-input {
+    width: 60%;
+    max-width: 500px;
+    padding: 12px 15px;
+    margin: 15px 0;
+    border: 2px solid gold;
+    border-radius: 25px;
+    font-size: 1em;
+    outline: none;
+    background: rgba(255, 255, 255, 0.8);
+    color: #333;
+    transition: all 0.3s ease;
+}
+.search-input:focus {
+    background: #fff;
+    border-color: #ffcc00;
+    box-shadow: 0px 0px 10px gold;
+}
+
+.scan-button {
+    margin-top: 20px;
+    padding: 12px 20px;
+    font-size: 1em;
+    border: none;
+    border-radius: 25px;
+    background: gold;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.1s ease;
+}
+.scan-button:hover {
+    background: #734a03;
+    transform: scale(1.05);
+    color: white;
+}
+
+.time-period select {
+    width: 65%;
+    max-width: 500px;
+    padding: 12px 15px;
+    margin: 15px 0;
+    border: 2px solid #ccc;
+    border-radius: 25px;
+    font-size: 1em;
+    outline: none;
+    background: rgba(255, 255, 255, 0.8);
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+/* --- NEW UI: Dropdown Option Colors --- */
+.time-period option:nth-child(2) {
+    background: linear-gradient(to right, #ffd700, #fff6b7);
+    color: #111010;
+    font-weight: bold;
+}
+.time-period option:nth-child(3) {
+    background: linear-gradient(to right, #c0c0c0, #f5f5f5);
+    color: #111010;
+    font-weight: bold;
+}
+.time-period option:nth-child(4) {
+    background: linear-gradient(to right, #b87333, #e6c3a5);
+    color: #111010;
+    font-weight: bold;
+}
+
+/* --- CORRECTED: Image ID Container and Preview Style --- */
+.image-id-container {
+    margin: 30px auto; /* Use margin auto to center the block */
+    width: 90%;
+    max-width: 600px; /* Give it a max-width to control its size */
+    /* The 'text-align: center' from the body will now center the content */
+}
+.preview img {
+  max-width: 100%;
+  max-height: 250px;
+  border-radius: 15px;
+  border: 3px solid gold;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+  margin-bottom: 20px; /* Add space between image and prediction */
+}
+
+
+/* --- Results Section (Adapted for New UI) --- */
+#results-container {
+    width: 90%;
+    max-width: 800px;
+    margin: 40px auto;
+    text-align: left; /* Align result text to the left for readability */
+}
+
+.loading-message {
+    text-align: center;
+    padding: 20px;
+    font-size: 1.2em;
+    font-weight: bold;
+    background: rgba(0,0,0,0.5);
+    color: #ffeb99;
+    border-radius: 15px;
+    border: 1px solid gold;
+}
+
+.results-heading {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid gold;
+    color: #ffeb99;
+    font-weight: bold;
+    text-shadow: 1px 1px 4px black;
+}
+
+.result-card, .ai-prediction-info {
+    background: rgba(0,0,0,0.6);
+    border: 1px solid gold;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+.result-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+}
+
+.result-card h3 {
+    margin-top: 0;
+    color: gold;
+    font-size: 1.4em;
+    text-shadow: 1px 1px 3px black;
+}
+
+/* Style for the AI Prediction text */
+.ai-prediction-info {
+    color: #f0f0f0;
+    font-style: italic;
+    font-size: 1.1em;
+    text-align: center;
+    /* Removed width: 100% to allow it to size naturally */
+}
+
+.db-result-content {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+.db-coin-image-container {
+    flex-shrink: 0;
+    width: 150px;
+}
+.db-coin-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    border: 2px solid gold;
+}
+.db-coin-details {
+    flex-grow: 1;
+    color: #f0f0f0;
+}
+.coin-code {
+    font-style: italic;
+    color: #ccc;
+    margin-top: -10px;
+    margin-bottom: 15px;
+}
+
+.engine-tag {
+    font-size: 0.7em;
+    background-color: rgba(255, 215, 0, 0.2);
+    color: gold;
+    padding: 3px 8px;
+    border-radius: 10px;
+    vertical-align: middle;
+    margin-left: 10px;
+}
+.read-more {
+    display: inline-block;
+    margin-top: 10px;
+    font-weight: bold;
+    color: gold;
+    text-decoration: none;
+}
+.read-more:hover { text-decoration: underline; }
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+  h1 { font-size: 2.2em; }
+  .search-input, .time-period select { width: 80%; }
+  .scan-button { width: 60%; }
+  .db-result-content { flex-direction: column; }
+  .db-coin-image-container { width: 100%; text-align: center; margin-bottom: 15px; }
+  .db-coin-image { max-width: 200px; }
+}
+
+@media (max-width: 480px) {
+  h1 { font-size: 1.8em; }
+  .container { padding: 20px 10px; }
+  .search-input, .time-period select { width: 90%; font-size: 0.9em; padding: 10px; }
+  .scan-button { width: 80%; font-size: 0.9em; padding: 10px; }
+}
+

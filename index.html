@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MUDRAGATHA</title>
+  <!-- Link to the main stylesheet -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+</head>
+<body>
+  <header>
+    <h1>MUDRAGATHA</h1>
+  </header>
+
+  <div class="container">
+    <h3>Search Coins</h3>
+    <input type="text" id="searchInput" class="search-input" placeholder="🔍 Search by dynasty, ruler, or symbol">
+
+    <!-- Scan Image section -->
+    <div class="scan-section">
+      <input type="file" id="coinInput" accept="image/*" capture="environment" style="display:none;" onchange="showPreview(event)" />
+      <button class="scan-button" onclick="document.getElementById('coinInput').click()">Scan Image</button>
+    </div>
+
+    <!-- Time Period Dropdown -->
+    <div class="time-period">
+      <h4>Select Time Period</h4>
+      <select id="timePeriod" name="timePeriod">
+        <option disabled selected>-- Choose a Period --</option>
+        <option value="ancient">Ancient India (6000 BC to 500 AD)</option>
+        <option value="medieval">Medieval India (500 AD to 1500 AD)</option>
+        <option value="modern">Modern India (1500 AD to present day)</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- --- NEW: Dedicated Container for Image Identification Results --- -->
+  <div id="image-id-results-container" class="image-id-container" style="display: none;">
+      <div class="preview">
+          <img id="coinPreview" src="#" alt="Coin Preview" style="display:none;" />
+      </div>
+      <div id="ai-prediction-result">
+          <!-- AI prediction text will be injected here -->
+      </div>
+  </div>
+
+
+  <!-- Container for Text Search Results (Database and Web) -->
+  <div id="results-container">
+      <div id="loading-message" class="loading-message" style="display: none;"></div>
+
+      <div id="database-results-section" style="display: none;">
+          <h2 class="results-heading">From Our Database</h2>
+          <div id="database-results"></div>
+      </div>
+
+      <div id="web-results-section" style="display: none;">
+          <h2 class="results-heading">From The Web</h2>
+          <div id="web-results"></div>
+      </div>
+  </div>
+
+  <!-- Link to the existing JavaScript file -->
+  <script src="{{ url_for('static', filename='js/next.js') }}"></script>
+</body>
+</html>
+
